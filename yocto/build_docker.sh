@@ -1,5 +1,5 @@
 #!/bin/bash
 
-docker build -t yocto-buildenv:2.2 docker/.
+docker build -t yocto-buildenv:2.3 docker/.
 
-docker run -it --rm -v $(pwd):/build -u `id -u` yocto-buildenv:2.2 /build/build.sh $@
+docker run -it --rm -v $(pwd):/build -u `id -u` yocto-buildenv:2.3 /build/build.sh $@

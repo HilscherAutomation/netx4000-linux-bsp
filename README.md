@@ -26,9 +26,9 @@ Base for all projects:
 | Kernel | linux-stable | 4.9 |
 
 
-# Yocto 2.2
+# Yocto 2.3
 
-For a full documentation of the Yocto build system refer to http://www.yoctoproject.org/docs/2.2.1/mega-manual/mega-manual.html
+For a full documentation of the Yocto build system refer to http://www.yoctoproject.org/docs/2.3/mega-manual/mega-manual.html
 
 
 ## Building
@@ -100,7 +100,7 @@ You will need to clone or copy an existing layer to your hard disk and add a ref
 **shell:**
 ```
 cd yocto
-git clone -b morty https://github.com/openembedded/meta-openembedded
+git clone -b pyro https://github.com/openembedded/meta-openembedded
 ```
 
 **bblayers.conf:**

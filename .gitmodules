@@ -1,11 +1,11 @@
 [submodule "poky"]
 	path = yocto/poky
 	url = https://git.yoctoproject.org/git/poky
-	branch = morty
+	branch = pyro
 [submodule "meta-hilscher-netx4000"]
 	path = yocto/meta-hilscher-netx4000
 	url = https://github.com/Hilscher/meta-hilscher-netx4000.git
-	branch = morty
+	branch = pyro
 [submodule "ubuntu/netx4000-barebox"]
 	path = ubuntu/netx4000-barebox
 	url = https://github.com/hilscher/netx4000-barebox.git
