@@ -23,7 +23,7 @@ Base for all projects:
 | Type | Name | Version |
 |------|------|---------|
 | Bootloader | Barebox | 2016.07.0 |
-| Kernel | linux-stable | 4.4 |
+| Kernel | linux-stable | 4.9 |
 
 
 # Yocto 2.2
