@@ -3,7 +3,7 @@
 export ARCH=arm
 export CROSS_COMPILE=arm-linux-gnueabihf-
 
-default_device_tree="nxhx4000-jtag-plus_rev2"
+default_device_tree="nxhx4000-jtag-plus-rev3"
 
 default_barebox_args=""
 default_kernel="zImage"
