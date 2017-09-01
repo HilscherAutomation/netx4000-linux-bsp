@@ -85,10 +85,10 @@ EOF
 cat <<EOF > rootfs/etc/network/interfaces
 auto lo
 
-auto eth0
+allow-hotplug eth0
 iface eth0 inet dhcp
 
-auto eth1
+allow-hotplug eth1
 iface eth1 inet static
         address 192.168.254.1
         netmask 255.255.255.0
