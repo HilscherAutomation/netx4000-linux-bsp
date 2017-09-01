@@ -9,7 +9,7 @@ default_barebox_args=""
 default_kernel="zImage"
 default_kernel_pkg_args="--arch $ARCH --subarch armhf --cross-compile $CROSS_COMPILE --jobs 4 --revision=0.9 --us --uc --rootcmd fakeroot kernel_image kernel_headers"
 default_rootfs_args=""
-default_sdimg_args="$default_device_tree"
+default_sdimg_args="$(basename $default_device_tree)"
 
 if [ -e ./ubuntu.cfg ]; then
 	echo Overwriting default parameter ...
