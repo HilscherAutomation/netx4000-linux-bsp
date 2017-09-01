@@ -65,6 +65,8 @@ EOF
 echo "ubuntu-netx4000" > rootfs/etc/hostname
 # Enable root login (password=root)
 chroot rootfs sh -c 'echo "root:root" | chpasswd'
+# Enable ssh root login by password
+sed -i 's/^PermitRootLogin.*/PermitRootLogin yes/g' rootfs/etc/ssh/sshd_config
 # Enable serial console (UART0) login
 cat <<EOF > rootfs/etc/init/ttyAMA0.conf
 # ttyAMA00 - getty
