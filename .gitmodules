@@ -9,7 +9,7 @@
 [submodule "ubuntu/netx4000-barebox"]
 	path = ubuntu/netx4000-barebox
 	url = https://github.com/hilscher/netx4000-barebox.git
-	branch = v2016.07.0-netx4000
+	branch = v2017.10.0-netx4000
 [submodule "ubuntu/netx4000-linux"]
 	path = ubuntu/netx4000-linux
 	url = https://github.com/hilscher/netx4000-linux.git
