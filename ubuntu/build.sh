@@ -7,6 +7,10 @@ default_device_tree="netx4000/nxhx4000-jtag-plus-rev3"
 
 default_barebox_args=""
 default_kernel="zImage"
+default_kernel_fragments="../yocto-kernel-cache/cfg/net/ipv6.cfg ../yocto-kernel-cache/cfg/net/ip6_nf.cfg \
+ ../yocto-kernel-cache/cfg/net/ipsec6.cfg ../yocto-kernel-cache/cfg/net/ip_nf.cfg \
+ ../yocto-kernel-cache/cfg/net/ipsec.cfg ../yocto-kernel-cache/features/net_sched/net_sched.cfg \
+ ../yocto-kernel-cache/features/netfilter/netfilter.cfg"
 default_kernel_pkg_args="--arch $ARCH --subarch armhf --cross-compile $CROSS_COMPILE --jobs 4 --revision=0.9 --us --uc --rootcmd fakeroot kernel_image kernel_headers"
 default_rootfs_args=""
 default_sdimg_args="$(basename $default_device_tree)"
@@ -57,7 +61,7 @@ do_build_kernel() {
 
 	# Create default config if neccessary
 	if [ ! -e .config ]; then
-		make netx4000_defconfig
+		scripts/kconfig/merge_config.sh arch/arm/configs/netx4000_defconfig ${default_kernel_fragments} > merge.log
 	fi
 
 	if [ $@ ]; then
