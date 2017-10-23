@@ -103,7 +103,7 @@ chroot rootfs apt-get clean
 # Remove qemu binary
 rm rootfs/usr/bin/qemu-arm-static
 
-tar cjf netx4000-ubuntu-rootfs.tar.bz2 -C rootfs .
+tar cjf netx4000-ubuntu-16.04-rootfs.tar.bz2 -C rootfs .
 rm -rf rootfs
 
 if [ ! -z "${binfmt_unregister}" ]; then
@@ -111,7 +111,7 @@ if [ ! -z "${binfmt_unregister}" ]; then
 fi
 
 # Create manifest file
-rm -f netx4000-ubuntu-rootfs.manifest
+rm -f netx4000-ubuntu-16.04-rootfs.manifest
 for package in $(echo $PACKAGE_LIST | sed 's/,/ /g'); do
-	echo $package >> netx4000-ubuntu-rootfs.manifest
+	echo $package >> netx4000-ubuntu-16.04-rootfs.manifest
 done
