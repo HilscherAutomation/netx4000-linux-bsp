@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-IMAGE_NAME="netx4000-ubuntu"
+IMAGE_NAME="netx4000-ubuntu-16.04"
 MACHINE=${1:="unknown"}
 
 # SD card image name
