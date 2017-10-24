@@ -46,13 +46,6 @@ debootstrap --foreign --include=${PACKAGE_LIST} --arch=armhf xenial rootfs http:
 cp /usr/bin/qemu-arm-static rootfs/usr/bin
 chroot rootfs /debootstrap/debootstrap --second-stage
 
-# Install kernel packages
-cp /usr/share/kernel-package/examples/etc/kernel/postinst.d/symlink_hook rootfs/etc/kernel/postinst.d
-cp kernel/*.deb rootfs
-for deb in $(ls rootfs/*.deb); do
-	chroot rootfs dpkg -i $(basename ${deb});
-done
-rm rootfs/*.deb
 
 # Insert ubuntu repositories into apt.conf
 cat <<EOF > rootfs/etc/apt/sources.list
@@ -99,6 +92,14 @@ chroot rootfs apt-get update
 chroot rootfs apt-get -f -y install
 chroot rootfs apt-get dist-upgrade -y
 chroot rootfs apt-get clean
+
+# Install kernel and cifX packages
+cp /usr/share/kernel-package/examples/etc/kernel/postinst.d/symlink_hook rootfs/etc/kernel/postinst.d
+cp kernel/*.deb rootfs
+cp ../cifx/*.deb rootfs
+packages=$(find rootfs -maxdepth 1 -name '*.deb' -exec basename {} \; | tr "\n" " ")
+chroot rootfs dpkg -i $packages
+rm rootfs/*.deb
 
 # Remove qemu binary
 rm rootfs/usr/bin/qemu-arm-static
