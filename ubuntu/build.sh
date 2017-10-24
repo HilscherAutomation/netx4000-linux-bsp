@@ -65,12 +65,20 @@ do_build_kernel() {
 	fi
 
 	if [ $@ ]; then
+		export ARCH=arm
+		export CROSS_COMPILE=arm-linux-gnueabihf-
 		make $@
 	else
 		make-kpkg $default_kernel_pkg_args
 		mkdir -p ${KERNEL_DEST}
 		rm -f ${KERNEL_DEST}/*.deb
 		mv ../*.deb ${KERNEL_DEST}
+
+		export ARCH=arm
+		export CROSS_COMPILE=arm-linux-gnueabihf-
+		make ${default_device_tree}.dtb
+		[ -e ../build/oftree ] && rm ../build/oftree
+		cp arch/arm/boot/dts/${default_device_tree}.dtb ../build/oftree
 	fi
 
 	popd
