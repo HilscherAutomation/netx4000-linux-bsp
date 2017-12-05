@@ -16,5 +16,5 @@
 	branch = v4.9-netx4000-stable
 [submodule "ubuntu/yocto-kernel-cache"]
 	path = ubuntu/yocto-kernel-cache
-	url = git://git.yoctoproject.org/yocto-kernel-cache
+	url = https://git.yoctoproject.org/git/yocto-kernel-cache
 	branch = yocto-4.9
