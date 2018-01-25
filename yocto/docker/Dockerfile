@@ -3,7 +3,7 @@ FROM ubuntu:16.04
 RUN apt-get update && \
     apt-get install -y gawk wget git-core diffstat unzip texinfo gcc-multilib \
     build-essential chrpath socat libsdl1.2-dev xterm python3 locales cpio \
-    tmux libssl-dev iputils-ping zip
+    tmux libssl-dev iputils-ping zip libncurses5-dev
 
 RUN locale-gen en_US.UTF-8 && \
     update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
