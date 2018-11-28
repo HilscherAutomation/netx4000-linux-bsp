@@ -22,11 +22,12 @@ yocto releases:
 ## 2.1 Install repo
 Install the android repo tool:
 https://source.android.com/setup/develop/
-
+```
   mkdir ~/bin
   export PATH=~/bin:$PATH
   curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
   chmod a+x ~/bin/repo
+```
 
 ## 2.2 Initialize workspace
 Create a working directory and initialize repo tool for your requested yocto version. The following
