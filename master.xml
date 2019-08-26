@@ -8,6 +8,7 @@
 	<project name="poky" remote="yocto" path="poky"/>
 	<project name="openembedded/meta-openembedded" path="meta-openembedded"/>
 	<project name="Hilscher/meta-hilscher-netx4000" path="meta-hilscher-netx4000">
+		<linkfile dest="Jenkinsfile" src="scripts/yocto/Jenkinsfile"/>
 		<linkfile dest="build.sh" src="scripts/yocto/build.sh"/>
 		<linkfile dest="build_docker.sh" src="scripts/yocto/build_docker.sh"/>
 		<linkfile dest="start_docker.sh" src="scripts/yocto/start_docker.sh"/>
