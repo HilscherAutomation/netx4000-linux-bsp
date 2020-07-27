@@ -14,6 +14,9 @@ This README file contains usage information for the netX4000 Linux board support
 This BSP uses androids repo tool to pull in all required repositories. It supports the following
 yocto releases:
  - master
+ - dunfell (3.1)
+ - warrior (2.7)
+ - thud (2.6)
  - sumo (2.5)
  - rocko (2.4)
 
