@@ -38,7 +38,7 @@ example will use the master branch
 ```
 mkdir ~/workspace/netx4000
 cd ~/workspace/netx4000
-repo init -u https://github.com/Hilscher/netx4000-linux-bsp -m master.xml
+repo init -u https://www.github.com/HilscherAutomation/netx4000-linux-bsp -m master.xml
 ```
 
 ## 2.3 Fetch sources
