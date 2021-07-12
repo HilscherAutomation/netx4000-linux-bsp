@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+	<remote name="yocto" fetch="https://git.yoctoproject.org/git"/>
+	<remote name="github" fetch="https://github.com"/>
+
+	<default revision="hardknott" remote="github" sync-j="8"/>
+
+	<project name="poky" remote="yocto" path="poky"/>
+	<project name="openembedded/meta-openembedded" path="meta-openembedded"/>
+	<project name="Hilscher/meta-hilscher-netx4000" path="meta-hilscher-netx4000">
+		<linkfile dest="Jenkinsfile" src="scripts/yocto/Jenkinsfile"/>
+		<linkfile dest="build.sh" src="scripts/yocto/build.sh"/>
+		<linkfile dest="build_docker.sh" src="scripts/yocto/build_docker.sh"/>
+		<linkfile dest="start_docker.sh" src="scripts/yocto/start_docker.sh"/>
+		<linkfile dest="COPYING.Hilscher-SLA" src="COPYING.Hilscher-SLA"/>
+		<linkfile dest="README.yocto" src="README"/>
+	</project>
+</manifest>
